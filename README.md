@@ -1,4 +1,4 @@
-# word-utils
+# datamuse-word-utils
 
 Provides many word utilities. Essentially a wrapper of Datamuse API.
 
