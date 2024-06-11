@@ -1,6 +1,6 @@
 
 // Wrapper class
-class wordUtils {
+class WordUtils {
     
     constructor() {
         this.baseURL = 'https://api.datamuse.com/words?';
@@ -470,7 +470,7 @@ class wordUtils {
 
 }
 
-export default wordUtils;
+export default WordUtils;
 
 
 
