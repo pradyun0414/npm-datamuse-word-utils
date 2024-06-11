@@ -18,7 +18,7 @@ Provides many word utilities. Essentially a wrapper of Datamuse API.
 
 ## What is it?
 
-word-utils is intended to provide useful functionalities for working with words. Examples include finding words with similar meanings, similar sounding words, related words, similarly spelled words, etc. 
+datamuse-word-utils is intended to provide useful functionalities for working with words. Examples include finding words with similar meanings, similar sounding words, related words, similarly spelled words, etc. 
 Queries can be further targeted by specifying starting and ending letters along with selecting a topic of interest. Methods are meant to be repeatedly chained, simplifying the process of using the API.
 
 ## Important Note
@@ -31,13 +31,13 @@ further look into the API for more niche solutions, please visit the [Datamuse A
 The package is ESM only. Install with npm.
 
 ```
-npm install word-utils
+npm install datamuse-word-utils
 ```
 
 ## Configure
 
 ```javascript
-import WordUtils from 'word-utils'
+import WordUtils from 'datamuse-word-utils'
 ```
 ## List of Methods
 
@@ -221,7 +221,7 @@ Note that the functions are asynchronous due to their nature of utilizing an API
 The core principle is that you can chain any of the functions listed above in ANY order and still get the same results in the end.
 
 ```javascript
-import WordUtils from 'word-utils';
+import WordUtils from 'datamuse-word-utils';
 const util = new WordUtils();
 
 async function getResults() {
