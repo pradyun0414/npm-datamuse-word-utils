@@ -20,5 +20,9 @@
     "association"
   ],
   "author": "Pradyun Bhaskar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pradyun0414/npm-datamuse-word-utils.git"
+  },
   "license": "MIT"
 }
