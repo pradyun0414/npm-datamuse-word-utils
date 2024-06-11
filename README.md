@@ -4,7 +4,17 @@ Provides many word utilities. Essentially a wrapper of Datamuse API.
 
 ## Table of Contents
 
-COMING SOON
+* [What is it?](#what-is-it)
+* [Important Note](#what-is-it)
+* [Install](#install)
+* [Configure](#configure)
+* [List of Methods](#list-of-methods)
+  * [Basic Methods](#basic-methods) 
+  * [Rel methods](#rel-methods) 
+  * [Metadata Methods](#metadata-md-methods) 
+* [How to use + Examples](#how-to-use--examples)
+* [License](#license)
+* [Credits](#credits)
 
 ## What is it?
 
@@ -279,13 +289,27 @@ async function getResults() {
 }
 ```
 
+What will not work, however, is the following:
+```javascript
+const util = new WordUtils();
+util.soundsLike("jirraf").printFetch();
+util.hyponyms("cutlery").printFetch();
+```
+Due to the asynchronous nature of the functions, using two methods on the same class instance without waiting for the completion of one will lead to errors. If you wish to do something like this, you MUST use different class instances
+to prevent overwriting.
+```javascript
+const util = new WordUtils();
+const utilTwo = new WordUtils();
+util.soundsLike("jirraf").printFetch();
+utilTwo.hyponyms("cutlery").printFetch();
+```
 ## License
 
-ISC License
+MIT License (see the ```license``` file in this repository)
 
 ## Credits
 
-A huge thanks to the Datamuse API. Please check it out if you wish to make more detailed queries - this is just a wrapper.
+A huge thanks to the [Datamuse API](https://www.datamuse.com/api/). If you use this package, please include the Datamuse API in your credits since they have made this possible. Also check it out if you wish to make more detailed queries - this is just a wrapper.
 <br/>
 Created by Pradyun Bhaskar
 
