@@ -212,24 +212,71 @@ The core principle is that you can chain any of the functions listed above in AN
 
 ```javascript
 import WordUtils from 'word-utils';
-const tester = new WordUtils();
+const util = new WordUtils();
 
-// THIS IS NOT DONE YET. I WILL BE WRITING DETAILED EXPLANATIONS FOR EACH LINE!
+async function getResults() {
 
-tester.similarMeaning("dog").startsWith("w").endsWith("f").soundsLike("woof").numResults(10).printFetch();
-tester.soundsLike("worm").topic("temperature").printFetch();
-tester.definitions().endsWith("a").similarMeaning("spoon").printFetch();
-tester.startEndBetween("w", "f", 2).printFetch();
+    // Words with a meaning similar to 'ringing in the ears'
+    const similar = await util.similarMeaning("ringing in the ears").fetch();
 
-tester.synonyms("basic").printFetch();
-tester.homophones("bare").wordsModifiedByAdjective("grizzly").printFetch();
-tester.adjectives("feet").antonyms("clean").printFetch();
-tester.hyponyms("cutlery").printFetch();
-tester.hypernyms("gondola").printFetch();
-tester.triggers("cow").printFetch();
 
-tester.soundsLike("potato").allMetadata().printFetch();
-tester.definitions().pronunciation().soundsLike("fighter").printFetch();
+    // Words that sound like 'jirraf'
+    await util.soundsLike("jirraf").printFetch();
+
+
+    // Words that are spelled like 'hipopatamuus'
+    await util.spelledLike("hipopatamuus").printFetch();
+
+
+    // Words with a similar meaning to 'dog' that start with a 'w', end with an 'f', and sound like 'woof' (returns 'wolf')
+    const meanings = await util.similarMeaning("dog").startsWith("w").endsWith("f").soundsLike("woof").fetch();
+
+
+    // Words that sound like 'worm' sorted by how related they are to temperature (limited to 10 results)
+    await util.soundsLike("worm").topic("temperature").numResults(10).printFetch();
+
+
+    // Words with similar meanings to 'spoon' that end with 'a' shown with their definitions in the resulting JSON
+    await util.definitions().endsWith("a").similarMeaning("spoon").printFetch();
+
+
+    // Words that start with 'w', end with 'f', and have two letters in between
+    await util.startEndBetween("w", "f", 2).printFetch();
+
+
+    // Synonyms for 'basic'
+    const synonyms = await util.synonyms("basic").fetch();
+
+
+    // Homophones for 'bare' that are also nouns modified by the adjective 'grizzly' (returns 'bear')
+    const homophones = await util.homophones("bare").wordsModifiedByAdjective("grizzly").fetch();
+
+
+    // Adjectives used to describe 'feet' that are also antonyms of 'clean' (returns 'dirty')
+    await util.adjectives("feet").antonyms("clean").printFetch();
+
+
+    // Hyponyms (terms more specific) for 'cutlery', such as 'spoon'
+    await util.hyponyms("cutlery").printFetch();
+
+
+    // Hypernyms (terms more general) for 'gondola', such as 'boat'
+    const hypernyms = util.hypernyms("gondola").fetch();
+
+
+    // Words that are triggered by (strongly associated with) the word 'cow'
+    await util.triggers("cow").printFetch();
+
+
+    // Words that sound like bottle with all associated metadata shown in the results
+    await util.soundsLike("bottle").allMetadata().printFetch();
+
+
+    // Words that are spelled like 'hipopatamuus' with definitions and pronunciations shown in the resulting JSON
+    await util.definitions().pronunciation().spelledLike("mouse").printFetch();
+
+    
+}
 ```
 
 ## License
