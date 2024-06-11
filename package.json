@@ -1,11 +1,12 @@
 {
-  "name": "word-tools",
+  "name": "word-utils",
   "version": "1.0.0",
-  "description": "Provides many utilities such as finding similar sounding words, words with similar meanings, words related to other words, words that certain letters, etc. Heavily utilizes Datamuse API.",
-  "main": "index.js",
+  "description": "Provides many utilities such as finding similar sounding words, words with similar meanings, words related to other words, words that certain letters, etc. Essentially a wrapper of the Datamuse API.",
+  "main": "wordUtils.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "keywords": [
     "rhyme",
     "similar",
