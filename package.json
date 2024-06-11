@@ -1,0 +1,23 @@
+{
+  "name": "word-tools",
+  "version": "1.0.0",
+  "description": "Provides many utilities such as finding similar sounding words, words with similar meanings, words related to other words, words that certain letters, etc. Heavily utilizes Datamuse API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rhyme",
+    "similar",
+    "definition",
+    "meaning",
+    "adjective",
+    "word",
+    "words",
+    "suggestion",
+    "autocomplete",
+    "association"
+  ],
+  "author": "Pradyun Bhaskar",
+  "license": "ISC"
+}
