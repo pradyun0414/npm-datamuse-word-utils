@@ -133,13 +133,14 @@ class WordUtils {
         if(this.paramCount === 0) {
             this.firstEndpoint = "sp";
         }
-        
-        let addOn = `&sp=${start}${questionMarks}${end}`;
+
         let questionMarks = '';
         for(let i=0; i<betweenCount; i++) {
             questionMarks += "?";
         }
 
+        let addOn = `&sp=${start}${questionMarks}${end}`;
+        
         this.spEndpoint = addOn;
         this.paramCount++;
         return this;
@@ -202,7 +203,7 @@ class WordUtils {
     }
 
     wordsModifiedByAdjective(adjective) {
-        let addOn = `&rel_jja=${word}`;
+        let addOn = `&rel_jja=${adjective}`;
         let currentEndpoint = this.endpoint;
 
         if(this.paramCount === 0) {
@@ -403,10 +404,10 @@ class WordUtils {
             console.log("First endpoint not found.");
         }
 
-        console.log("Fetching: ", fetchURL);
+        // console.log("Fetching: ", fetchURL);
         const request = await fetch(fetchURL);
         const response = await request.json();
-        console.log(response);
+        // console.log(response);
 
         // Clear
         this.endpoint = '';
@@ -448,7 +449,7 @@ class WordUtils {
             console.log("First endpoint not found.");
         }
 
-        console.log("Fetching: ", fetchURL);
+        // console.log("Fetching: ", fetchURL);
         const request = await fetch(fetchURL);
         const response = await request.json();
         console.log(response);
