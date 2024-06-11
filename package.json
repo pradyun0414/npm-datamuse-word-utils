@@ -8,7 +8,7 @@
   },
   "type": "module",
   "keywords": [
-    "rhyme",
+    "utilities",
     "similar",
     "definition",
     "meaning",
@@ -16,9 +16,9 @@
     "word",
     "words",
     "suggestion",
-    "autocomplete",
+    "tools",
     "association"
   ],
   "author": "Pradyun Bhaskar",
-  "license": "ISC"
+  "license": "MIT"
 }
