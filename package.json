@@ -1,6 +1,6 @@
 {
   "name": "datamuse-word-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Provides many utilities such as finding similar sounding words, words with similar meanings, words related to other words, words that certain letters, etc. Essentially a wrapper of the Datamuse API.",
   "main": "wordUtils.js",
   "scripts": {
